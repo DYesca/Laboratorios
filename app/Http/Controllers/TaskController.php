@@ -60,8 +60,18 @@ class TaskController extends Controller
 
     public function complete(Task $task)
     {
+        $task->delete();
+        return redirect('/tasks');
+
+        /* 
+        Quise hacer que al completar una tarea, se marcara como completada en la base de datos, pero no pude hacerlo funcionar.
+        Así que lo dejo comentado.
+        Y en su lugar, hice que al completar una tarea, se eliminara de la base de datos.
+        */
+        /*
         $task->completed = true;
         $task->save();
         return redirect('/tasks');
+        */
     }
 }
