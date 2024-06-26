@@ -1,3 +1,6 @@
+@extends('components.app-layout')
+@section('content')
+
 <h1>Editando tarea ID: {{ $task->id }}</h1>
 <hr>
 @if ($errors->any())
@@ -28,3 +31,4 @@
     </div>
     <button type="submit">Actualizar</button>
 </form>
+@endsection
