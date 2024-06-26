@@ -49,7 +49,7 @@ class TaskController extends Controller
 
         $task->update($data);
 
-        return redirect('/tasks/' . $task->id);
+        return redirect('/tasks');
     }
 
     public function delete(Task $task)
@@ -60,9 +60,9 @@ class TaskController extends Controller
 
     public function complete(Task $task)
     {
-        $task->delete();
+        $task->completed = !$task->completed;
+        $task->save();
         return redirect('/tasks');
-
         /* 
         Quise hacer que al completar una tarea, se marcara como completada en la base de datos, pero no pude hacerlo funcionar.
         Así que lo dejo comentado.

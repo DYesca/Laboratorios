@@ -1,3 +1,5 @@
+@extends('components.app-layout')
+@section('content')
 <h1>Creado una tarea</h1>
 <hr>
 @if ($errors->any())
@@ -27,3 +29,4 @@
     </div>
     <button type="submit">Crear tarea</button>
 </form>
+@endsection
