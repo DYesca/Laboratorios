@@ -1,4 +1,4 @@
-<h1>Eliminado tarea ID: {{ $task->id }}</h1>
+<h1>Eliminando tarea ID: {{ $task->id }}</h1>
 <hr>
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -12,19 +12,5 @@
 <form action="/tasks/{{ $task->id }}" method="POST">
     @csrf
     @method('delete')
-    <div>
-        <label for="name">Nombre</label>
-        <input type="text" name="name" id="name" value="{{ $task->name }}">
-        @error('name')
-            <p>{{ $message }}</p>
-        @enderror
-    </div>
-    <div>
-        <label for="description">Descripción</label>
-        <textarea name="description" id="description" cols="30" rows="10">{{ $task->description }}</textarea>
-        @error('description')
-            <p>{{ $message }}</p>
-        @enderror
-    </div>
     <button type="submit">Eliminar</button>
 </form>

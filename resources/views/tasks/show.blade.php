@@ -5,14 +5,8 @@
 
 <a href="/tasks/{{ $task->id }}/edit">Editar</a>
 
-<a href="/tasks/{{ $task->id }}/delete">Elimiar</a>
-<form action="/tasks/{{ $task->id }}/delete" method="POST"> 
-    @csrf 
-    @method('delete') 
-
-    
-
-    
-
-
-
+<form action="/tasks/{{ $task->id }}" method="POST" style="display:inline;">
+    @csrf
+    @method('delete')
+    <button type="submit">Eliminar</button>
+</form>
