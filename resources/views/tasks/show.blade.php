@@ -6,12 +6,12 @@
 <h2>{{ $task->name }}</h2>
 <p>{{ $task->description }}</p>
 
-<a href="/tasks/{{ $task->id }}/edit">Editar</a>
+<a href="/tasks/{{ $task->id }}/edit" class="btn btn-primary">Editar</a>
 
 
 <form action="/tasks/{{ $task->id }}" method="POST" style="display:inline;">
     @csrf
     @method('delete')
-    <button type="submit">Eliminar</button>
+    <button type="submit" class="btn btn-warning">Eliminar</button> 
 </form>
 @endsection

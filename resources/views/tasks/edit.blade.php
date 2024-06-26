@@ -29,6 +29,6 @@
             <p>{{ $message }}</p>
         @enderror
     </div>
-    <button type="submit">Actualizar</button>
+    <button type="submit" class="btn btn-success" >Actualizar</button>
 </form>
 @endsection
