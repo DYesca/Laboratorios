@@ -2,12 +2,7 @@
 
 @section('content')
 
-
-
-
-
 <h2 class="display-6 text-center mb-4">Tareas</h2>
-
 <a href="/tasks/create" class="btn btn-outline-primary">Nueva Tarea</a>
 <div class="table-responsive">
     <table class="table text-left">
@@ -21,7 +16,6 @@
             </tr>
         </thead>
         <tbody>
-
             @foreach ($tasks as $task)
                 <tr>
                     <th scope="row" class="text-start">{{ $task->id }}</th>
