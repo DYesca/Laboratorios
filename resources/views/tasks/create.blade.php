@@ -1,5 +1,7 @@
 @extends('components.app-layout')
 @section('content')
+
+
 <h1>Creado una tarea</h1>
 <hr>
 @if ($errors->any())
@@ -13,20 +15,20 @@
 @endif
 <form action="/tasks" method="POST">
     @csrf
-    <div>
+    <div class="form-group">
         <label for="name">Nombre</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" class="form-control">
         @error('name')
-            <p>{{ $message }}</p>
+            <p class="text-danger">{{ $message }}</p>
         @enderror
     </div>
-    <div>
+    <div class="form-group">
         <label for="description">Descripción</label>
-        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
         @error('description')
-            <p>{{ $message }}</p>
+            <p class="text-danger">{{ $message }}</p>
         @enderror
     </div>
-    <button type="submit">Crear tarea</button>
+    <button type="submit" class="btn btn-primary">Crear tarea</button>
 </form>
 @endsection
