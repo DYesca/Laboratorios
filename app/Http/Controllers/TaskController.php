@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use App\Models\Priority; // Add this line to import the 'Priority' class
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -15,8 +16,12 @@ class TaskController extends Controller
 
     public function create()
     {
-        return view('tasks.create');
+
+        return view('tasks.create',[
+            'priorities' => Priority::all()
+        ]);
     }
+
 
     public function show(Task $task)
     {
@@ -25,9 +30,17 @@ class TaskController extends Controller
 
     public function store()
     {
+
+        // $task = new Task();
+
+        // $task->name = request('name'); 
+        // $task->description = request('description');
+
+        // $task->save();
         $data = request()->validate([
             'name' => ['required', 'min:3', 'max:255'],
-            'description' => ['required', 'min:3']
+            'description' => ['required', 'min:3'],
+            'priority_id' => 'required|exists:priorities,id'
         ]);
 
         Task::create($data);

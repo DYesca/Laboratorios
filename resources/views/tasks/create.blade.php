@@ -22,6 +22,20 @@
             <p class="text-danger">{{ $message }}</p>
         @enderror
     </div>
+
+    <div>
+        <label class="form-label" for="name">Prioridad</label>
+        <select name="priority_id" id="priority_id" class="form-control">
+            @foreach($priorities as $priority)
+                <option value="{{ $priority->id }}">{{ $priority->name }}</option>
+            @endforeach
+            
+        </select>
+        @error('priority_id')
+            <p>{{ $message }}</p>
+        @enderror
+    </div>
+
     <div class="form-group">
         <label for="description">Descripción</label>
         <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
