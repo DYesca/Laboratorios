@@ -23,7 +23,7 @@
                         <a href='{{ route('tasks.show', $task->id) }}'>{{ $task->name }}</a>
                     </th>
                     <td>
-                        <span class="badge text-bg-warning">Media</span>
+                    <span class="badge text-bg-warning">{{ $task->priority?->name }}</span>
                     </td>
                     <td>
                         @if ($task->completed)
